@@ -1,0 +1,94 @@
+body {
+    background-color: #0b0b0b; /* Set your desired background color */
+  }
+.calendar-container {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: rgb(50, 50, 50);
+    margin-top: 5%;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .calendar-header h2 {
+    margin: 0;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: rgb(50, 50, 50);
+    border-radius: 4px;
+  }
+  .calendar-day:hover {
+    background-color: white; /* Changes background to white on hover */
+    color: black; /* Changes text color to black for contrast */
+    cursor: pointer;
+  }
+  .currentDay {
+    display: flex;
+    background-color:rgb(90, 67, 173);
+    color: black;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 4px;
+
+  }
+
+  
+  .available-dates {
+    padding: 10px;
+    margin-top: 5%;
+  }
+  
+  .available-dates h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .available-dates ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .available-dates li {
+    margin: 3% 0;
+
+  }
+  .available-date-btn {
+    background-color: #575859;
+    color: white;
+    padding: 5px 10px;
+    width: 70%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .available-date-btn:hover {
+    background-color: rgb(90, 67, 173); /* Changes background to white on hover */
+    color: black; /* Changes text color to black for contrast */
+    cursor: pointer;
+  }
+  
+  .divide {
+    background-color: #f1f2f3;
+    
+  }
