@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Calendar.css";
+import AvailableTimes from './AvailableTimes';
 
 const Calendar = ({ availableDates }) => {
   const [currentDay, setCurrentDay] = useState(new Date().getDate());
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [serviceId, setServiceId] = useState("Antonio");  // Example service ID (name of stylist)
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);  // Example date "YYYY-MM-DD"
 
   const months = [
     "January", "February", "March", "April", "May", "June",
@@ -51,6 +54,7 @@ const Calendar = ({ availableDates }) => {
         
     setCurrentDay(day);
   }
+  const formattedDate = `${currentYear}-${String(currentMonth).padStart(2, '0')}-${String(currentDay).padStart(2, '0')}`;
   return (
     <div className="calendar-container">
       <div className="calendar-header">
@@ -71,13 +75,7 @@ const Calendar = ({ availableDates }) => {
       <div className="available-dates">
       <hr className = "divide"/>
         <h3>Available Times:</h3>
-        <ul>
-          {availableDates.map((date, index) => (
-            <li key={index}>
-                <button className="available-date-btn">{date}</button>
-            </li>
-          ))}
-        </ul>
+        <AvailableTimes serviceId={serviceId} selectedDate={formattedDate} />
       </div>
     </div>
   );

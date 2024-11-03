@@ -6,8 +6,8 @@ const timeSlot = new mongoose.Schema({
     isBooked: { type: Boolean, default: false },
 });
 const AvailabilitySchema = new mongoose.Schema({
-  date: { type: Date, required: true },
-  timeSlots: [timeSlot]
+  date: { type: String, required: true },
+  timeSlots:[timeSlot]
 });
 
 const ServiceSchema = new mongoose.Schema({

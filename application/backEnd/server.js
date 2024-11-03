@@ -3,8 +3,15 @@ const mongoose = require('mongoose');
 require('dotenv').config(); // Load environment variables from .env file
 const serviceRoutes = require('./routes/Services');
 
+
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+
+const cors = require('cors');
+app.use(cors()); // Allow all origins
+
 
 // Middleware to parse JSON requests
 app.use(express.json());
